@@ -79,7 +79,6 @@ const WorkoutPage = () => {
           <p>Status: {workout.status}</p>
           <p>Required Equipment: {workout.requiredEquipment ? "Yes" : "No"}</p>
 
-          
           <>
             <button onClick={() => navigate(`/edit-workout/${workout._id}`)}>Edit</button>
             <button onClick={() => onDeleteClick(workout._id)}>Delete</button>
