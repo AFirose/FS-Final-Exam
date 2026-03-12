@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useSignup from "../hooks/useSignup";
 
 const SignupPage = () => {
   const [name, setName] = useState("");
@@ -15,6 +16,20 @@ const SignupPage = () => {
     // - Display error from the hook if present
     // - Display a loading state on the button using isLoading from the hook
     // - Navigate to "/" on successful signup
+
+    await signup({
+      name: name.value,
+      username: username.value,
+      password: password.value,
+      phone_number: phoneNumber.value,
+      address: address.value,
+    });
+    if (!error) {
+      console.log("success");
+      setIsAuthenticated(true);
+      navigate("/");
+    }
+
     console.log("Signup submit:", { name, username, password, phone_number, address });
   };
 
